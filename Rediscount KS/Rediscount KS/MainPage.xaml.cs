@@ -195,7 +195,7 @@ namespace Rediscount_KS
                     Alllines = Alllines + linetosave;
                 }
                 
-                string PathToSaveThisFile = File.ReadAllText(FileSystem.AppDataDirectory + "pathtoinvebtory.txt");
+                string PathToSaveThisFile = File.ReadAllText(FileSystem.AppDataDirectory + "pathtoinvebtory.txt") ;
                 File.WriteAllText(PathToSaveThisFile, Alllines);
                 
                 await DisplayAlert("Файл інвентаризації збережено", PathToSaveThisFile, "OK");
