@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rediscount_KS.MainPage">
+
+    <StackLayout BackgroundColor="Black">
+        <StackLayout Orientation="Horizontal">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"></ColumnDefinition>
+                    <ColumnDefinition Width="100*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="MenuButton" Text ="MENU" IsTabStop="False" BorderColor="Black" Clicked="MenuButton_Clicked"></Button>
+                <Editor  Grid.Column="1" x:Name="theeditor" Keyboard="Plain" Completed="theeditor_Completed" IsTabStop="True"></Editor>
+
+            </Grid>
+        </StackLayout>
+        <ListView  SelectionMode="None"  x:Name="ScannedItems"  ItemsSource="{Binding Scanned}" HasUnevenRows="True" SeparatorColor="LightGray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width ="120*"/>
+                                <ColumnDefinition Width ="35*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0">
+                                <Label Text="{Binding NameOfItem}" TextColor="Ivory"  />
+                                <Label Text="{Binding InventarNumber}" TextColor="Wheat" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <Label Grid.Column="1" Text="{Binding DepartmentOfDestignation}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
